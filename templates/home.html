@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/test_css.css') }}">
+
+   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+  <div id="particles-js">
+    <div style="position: absolute;">
+    <br>
+    <h3 class="d-flex justify-content-center " style="color: white;">CS5 515 Social Media Data Science Pipeline</h3>
+    <h2 class="d-flex justify-content-center " style="color: white;">Analyzing Sports Insights on Twitter, Reddit, and YouTube</h2>
+    <br>
+    <div class="d-flex justify-content-center ">
+    </div>
+    <div class="container-fluid outer">
+        <div class="card-deck ">
+          <div class="card box"  id = "card_abuse" >
+            <!-- <img class="card-img-top img" src="https://jolayviewbloghome.files.wordpress.com/2020/03/ciberbullying-consideraciones-docentes-trabajar-tema-clase.jpg" alt="Card image cap"> -->
+            <img class="card-img-top img" src="https://avantgardenbronzes.com/wp-content/uploads/2022/03/03E787A2-9B78-438A-BA41-DA8345C8880D.jpeg" alt="Card image cap">
+            <div class="card-body">
+              <h5 > <a href="http://127.0.0.1:5000/abusive_content" style="color: white;">How ill can the public speak?? Let's find out.. </a> </h5>
+              <p class="card-text">Check out abusive content detected in the twitter datasets</p>
+            </div>
+          </div>
+          <div class="card box" id = "card_popularity">
+            <img class="card-img-top" src="https://www.deccanherald.com/sites/dh/files/gallery_images/2021/04/02/2019-05-23T143420Z_1711218341_RC13C2033B00_RTRMADP_3_CRICKET-WORLDCUP-IND-PROSPECTS.JPG.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><a href="http://127.0.0.1:5000/player_popularity" style="color: white;"> Wanna know who is the talk of the town? </a></h5>
+              <p class="card-text">Check out your favorite cricketers popularity</p>
+            </div>
+          </div>
+          <div class="card box" id = "card_popularity">
+            <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/e/e5/France_champion_of_the_Football_World_Cup_Russia_2018.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><a href="http://127.0.0.1:5000/football_player_popularity" style="color: white;"> Wanna know who is the talk of the town? </a></h5>
+              <p class="card-text">Check out your favorite footballers popularity</p>
+            </div>
+          </div>
+          <div class="card box" id = "card_reddit">
+            <img class="card-img-top"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqirbhAf48y00S1clBnrwA6TAPkNdn3yl0-g&usqp=CAU" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"> <a href="http://127.0.0.1:5000/reddit_per_day" style="color: white;">Let's talk some numbers</a></h5>
+              <p class="card-text">Find out the number of posts per hour on reddit.</p>
+            </div>
+          </div>
+          <!-- <div class="card box" id = "card_reddit">
+            <img class="card-img-top"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqirbhAf48y00S1clBnrwA6TAPkNdn3yl0-g&usqp=CAU" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"> <a href="http://127.0.0.1:5000/reddit_per_day" style="color: white;">Reddit posts per day</a></h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            </div>
+          </div> -->
+
+
+          </div>
+    </div>
+  </div>
+  </div>
+    
+    <script src=
+        "/static/particles.js-master/particles.js">
+    </script>
+    <script src=
+        "/static/particles.js-master/demo/js/app.js">
+    </script>
+</body>
+</html>

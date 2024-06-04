@@ -1,0 +1,108 @@
+body {
+    /* /background-image: url(https://www.drone.io/images/backgrounds/background-3-7915e0865d.svg); */
+    /* background-image: url(https://coolbackgrounds.io/images/backgrounds/index/sea-edge-79ab30e2.png); */
+    /* background-size: cover; */
+
+}
+
+/*.card{
+    border-radius: 4px;
+    background: #c0d6df;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  padding: 14px 80px 18px 36px;
+  cursor: pointer;
+}
+
+
+#card_reddit:hover{
+    
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #4F6D7A; 
+}
+
+#card_popularity:hover{
+    
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #E8DAB2; 
+}
+
+#card_abuse:hover{
+    
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #DD6E42; 
+} */
+
+.outer{
+    padding: 0 60px;
+}
+
+.img{
+    border-radius:1px 15px 0px 0px;
+}
+
+.box{
+    border-radius: 1px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+	margin: 20px;
+	color: aliceblue;
+	border-radius: 15px;
+	backdrop-filter: blur(5px);
+}
+
+.box:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+  }
+
+  .box img{
+    -webkit-transition:all .9s ease; 
+    -moz-transition:all .9s ease; 
+    -o-transition:all .9s ease;
+    -ms-transition:all .9s ease; 
+    width: 100%;
+    height: 200px;
+  }
+
+.box:hover img{
+    opacity: 0.9;
+    -webkit-transform:scale(1.15);
+    -moz-transform:scale(1.15);
+    -ms-transform:scale(1.15);
+    -o-transform:scale(1.15);
+    transform:scale(1.15);
+  }
+  #particles-js {
+    /* background: black; */
+    height: 100vh;
+    background: linear-gradient(90deg, #ffa9a9, #64a1e0, #ffa9a9, #64a1e0);
+  background-size: 400% 400%;
+  -webkit-animation: gradientBG 100s ease infinite forwards;
+  animation: gradientBG 100s ease infinite forwards;
+}
+
+@-webkit-keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>FPlayer Popularity</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- import plugin script -->
+    <!-- <script src="static/Chart.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <br>
+      <h1>Football Player's Popularity </h1>
+<br>
+      <div class="container-fluid">
+        <div class="row no-gutters">
+          <div class="col-md-8">
+            <form action="{{ url_for("football_player_popularity")}}" method="post">
+              <label for="firstname">Enter name of your favorite Football player:</label>
+              <input type="text" id="firstname" name="fname" placeholder="enter name" />
+              <button type="psubmit">Submit</button>
+            </form>
+            
+        <br>
+            <!-- bar chart canvas element -->
+            <div style="width: 800px; height: 700px">
+              <canvas id="myChart" width="600" height="400"></canvas>
+              <p id="caption">Have a favorite footballer?
+                <br>
+                Find out if your player is up there with the best in the game!</p>
+            </div>
+          </div>
+          <div class="col-md-4 mt-30">
+            <table class="table table-striped">
+              <thead class="thead-dark">
+                <tr >
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Nicknames</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Cristiano Ronaldo  </td>
+                  <td>CR7 </td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jordan Pickford</td>
+                  <td> </td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Neymar</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>Kylain Mbappe</td>
+                  <td>Mbappe</td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>Robert Lewandowski</td>
+                  <td>Lewandowski</td>
+                </tr>
+                <tr>
+                  <th scope="row">6</th>
+                  <td> Hakim Ziyech</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">7</th>
+                  <td>Achraf Hakimi</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">8</th>
+                  <td>Hugo Lloris
+                  </td>
+                  <td>Lloris</td>
+                </tr>
+                <tr>
+                  <th scope="row">9</th>
+                  <td>Diego Maradona</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">10</th>
+                  <td>Virgil Van Dijk</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+           
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <script>
+           
+            // define the chart data
+            var chartData = {
+              // labels : ["January", "February", "March", "April", "May", "June", "July", "August"],
+              labels : [{% for item in flabels %}
+                         "{{item}}",
+                        {% endfor %}],
+              datasets: [
+                {
+                  label: "reddit",
+                  backgroundColor: "rgba(255, 86, 0, 1)",
+                  data : [{% for item in rfvalues %}
+                            {{item}},
+                          {% endfor %}],
+                  spanGaps: false,
+                },
+                {
+                  label: "twitter",
+                  backgroundColor: "rgba(29, 161, 242,1)",
+                  data : [{% for item in tfvalues %}
+                            {{item}},
+                          {% endfor %}],
+                  spanGaps: false,
+                },
+                {
+                  label: "youtube",
+                  backgroundColor: "rgba(255, 0, 0,1)",
+                  data : [{% for item in yfvalues %}
+                            {{item}},
+                          {% endfor %}],
+                  spanGaps: false,
+                },
+              ],
+            };
+            let ctx = document.getElementById("myChart").getContext("2d");
+            let myChart = new Chart(ctx, {
+              type: "bar",
+              data: chartData,
+            });
+
+    </script>
+  </body>
+</html>

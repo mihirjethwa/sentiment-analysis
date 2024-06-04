@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Player Popularity</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- import plugin script -->
+    <!-- <script src="static/Chart.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <br>
+      <h1>Cricket Player's Popularity </h1>
+<br>
+      <div class="container-fluid">
+        <div class="row no-gutters">
+          <div class="col-md-8">
+            <form action="{{ url_for("player_popularity")}}" method="post">
+              <label for="firstname">Enter name of your favorite Cricket player:</label>
+              <input type="text" id="firstname" name="cname" placeholder="enter name" />
+              <button type="psubmit">Submit</button>
+            </form>
+            <br>
+        
+            <!-- bar chart canvas element -->
+            <div style="width: 800px; height: 700px">
+              <canvas id="myChart" width="600" height="400"></canvas>
+              <br>
+              <p id="caption">Find out if the top ranked in also the most popular.</p>
+            </div>
+          </div>
+          <div class="col-md-4 mt-30">
+            <table class="table table-striped">
+              <thead class="thead-dark">
+                <tr >
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Nicknames</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>MS Dhoni  </td>
+                  <td>dhoni </td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Virat Kohli </td>
+                  <td>King Kohli, Virat </td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Rohit Sharma</td>
+                  <td>Rohit, Hitman</td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>Kane Williamson</td>
+                  <td>Williamson</td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>David Warner</td>
+                  <td>Warner</td>
+                </tr>
+                <tr>
+                  <th scope="row">6</th>
+                  <td>Rashid Khan</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">7</th>
+                  <td>Ben Strokes</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">8</th>
+                  <td>Hardik Pandya</td>
+                  <td>Pandya</td>
+                </tr>
+                <tr>
+                  <th scope="row">10</th>
+                  <td>Rashid Khan</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">10</th>
+                  <td>Wanindu Hasaranga</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">11</th>
+                  <td>Glenn Maxwell</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+           
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <script>
+           
+            // define the chart data
+            var chartData = {
+              // labels : ["January", "February", "March", "April", "May", "June", "July", "August"],
+              labels : [{% for item in labels %}
+                         "{{item}}",
+                        {% endfor %}],
+              datasets: [
+                {
+                  label: "reddit",
+                  backgroundColor: "rgba(255, 86, 0, 1)",
+                  data : [{% for item in rvalues %}
+                            {{item}},
+                          {% endfor %}],
+                  spanGaps: false,
+                },
+                {
+                  label: "twitter",
+                  backgroundColor: "rgba(29, 161, 242,1)",
+                  data : [{% for item in tvalues %}
+                            {{item}},
+                          {% endfor %}],
+                  spanGaps: false,
+                },
+                {
+                  label: "youtube",
+                  backgroundColor: "rgba(255, 0, 0,1)",
+                  data : [{% for item in yvalues %}
+                            {{item}},
+                          {% endfor %}],
+                  spanGaps: false,
+                },
+              ],
+            };
+            let ctx = document.getElementById("myChart").getContext("2d");
+            let myChart = new Chart(ctx, {
+              type: "bar",
+              data: chartData,
+            });
+
+    </script>
+  </body>
+</html>

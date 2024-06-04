@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <br>
+    <br>
+    <h3 class="d-flex justify-content-center ">Abusive content detected in tweets</h3>
+    <!-- <br> -->
+    <div class="container-fluid p-5">
+        <div class="card-deck">
+          <div class="card" style="margin: 30px">
+            
+            <div class="card-body">
+              <h5 class="card-title">Football tweets showing abusive content comparison</h5>
+              <img class="card-img-top" src="/static/sentiment_football.png" alt="Card image cap">
+              <p class="card-text">This graph describes our data by comparing the number of positive vs negative vs neutral tweets. As expected, a majority of tweets are neutral, followed by negative and positive tweets. We have used TextBlob library to classify the tweets.</p>
+            </div>
+          </div>
+          <div class="card" style="margin: 30px">
+            <div class="card-body">
+              <h5 class="card-title">Cricket tweets showing abusive content comparison</h5>
+              <img class="card-img-top" src="/static/sentiment_cricket.png" alt="Card image cap">
+              <p class="card-text">We applied the same library to the cricket tweets and the results were similar to football. Majority of tweets were neutral followed by positive and then negetive.</p>
+              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            </div>
+          </div>
+            
+            </div>
+
+            <div class="card-deck">
+              <div class="card" style="margin: 30px">
+                
+                <div class="card-body">
+                  <h5 class="card-title">Football tweets showing abusive content comparison</h5>
+                  <img class="card-img-top" src="/static/twitter_football.jpeg" alt="Card image cap">
+                  <p class="card-text">In this plot, we are taking Football tweets in account. We have compared two scores, Semi-normalised vs Vader score.</p>
+                </div>
+              </div>
+              <div class="card" style="margin: 30px">
+                <div class="card-body">
+                  <h5 class="card-title">Cricket tweets showing abusive content comparison</h5>
+                  <img class="card-img-top" src="/static/twitter_cricket.jpeg" alt="Card image cap">
+                  <p class="card-text">In this plot, we are taking cricket tweets in account. We have compared two scores, Semi-normalised vs Vader score.</p> 
+                </div>
+              </div>
+              
+              </div>
+              
+          </div>
+    </div>
+    
+    
+</body>
+</html>

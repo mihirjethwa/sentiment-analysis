@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Player Popularity</title>
+    <!-- import plugin script -->
+    <!-- <script src="static/Chart.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+  <h1>Reddit posts per day</h1>
+    <form action="{{ url_for("reddit_per_day")}}" method="post">
+      <label for="sn">Enter subreddit name:</label>
+      <input type="text" id="subreddit" name="sreddit" placeholder="enter subreddit" />
+      
+      <label for="date">Select a date:</label>
+      <select name="dates" id="firstname">
+        <option value="2022-12-03T">2022-12-06T</option>
+        <option value="2022-12-08T">2022-12-07T</option>
+        <option value="2022-12-07T">2022-12-08T</option>
+        <option value="2022-12-06T">2022-12-09T</option>
+        <option value="2022-12-06T">2022-12-10T</option>
+        <option value="2022-12-06T">2022-12-11T</option>
+      </select>
+      <button type="rsubmit">Submit</button>
+    </form>
+    
+
+    <!-- bar chart canvas element -->
+    <div style="width: 800px; height: 700px">
+      <canvas id="myChart" width="600" height="400"></canvas>
+      <p id="caption">The bar graph is displaying hourly data of reddit posts made in a day.</p>
+    </div>
+
+    
+
+    <script>
+           
+            // define the chart data
+            var chartData = {
+              // labels : ["January", "February", "March", "April", "May", "June", "July", "August"],
+              labels : [{% for item in labels %}
+                         "{{item}}",
+                        {% endfor %}],
+              datasets: [
+                {
+                  label: "reddit posts",
+                  backgroundColor: "rgba(75,192,192,0.8)",
+                  data : [{% for item in values %}
+                            {{item}},
+                          {% endfor %}],
+                  spanGaps: false,
+                }
+              ],
+            };
+
+            // get chart canvas
+            let ctx = document.getElementById("myChart").getContext("2d");
+
+            // create the chart using the chart canvas
+            let myChart = new Chart(ctx, {
+              type: "bar",
+              data: chartData,
+            });
+    </script>
+  </body>
+</html>
